@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/calculator/index.css">
+</head>
+
+<body>
+
+
+
+    <section class="mainconatiner">
+        <div class="maincard">
+            <div class="userstats">
+                <h3>Welcome, {{usernmae}}</h3>
+                <br>
+                <strong style="display: block;color:white;font-size:13px;text-align:center">Your balance:
+                    {{balance}}</strong>
+                <br>
+            </div>
+            <div class="addmoreexpenseconatiner">
+                <form action="/calculator" method="post">
+                    <h1>Add Your Expense</h1>
+                    <input type="text" name="heading" id="heading" placeholder="Heading" required>
+                    <input type="text" name="description" id="description" placeholder="Description" required>
+                    <input type="number" name="amount" id="amount" placeholder="Amount" required>
+                    <input type="date" name="date" name="date" id="date" required>
+                    <select name="transactiontype" id="transactiontype" required>
+                        <option value="credit" selected>Credit</option>
+                        <option value="debit">Debit</option>
+                    </select>
+                    <button type="submit">Add to database</button>
+                </form>
+            </div>
+            <div class="allexpensisconatiner">
+                <br>
+                <h1>All transaction history</h1>
+                <br>
+                {{{alltransactions}}}
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
